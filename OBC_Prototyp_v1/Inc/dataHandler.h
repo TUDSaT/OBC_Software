@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file           : dataHandler.h
-  * @brief          : This handler provides funcitonality to pack rawdata into
+  * @brief          : This handler provides functionality to pack rawdata into
   * 				  data packets.
   ******************************************************************************
  */
