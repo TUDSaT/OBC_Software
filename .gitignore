@@ -1,5 +1,8 @@
 *.o
 *.elf
+*.launch
 *.list
 *.map
 *.su
+/OBC_Prototyp_v1/Debug/
+/OBC_Prototyp_v1/.settings/
