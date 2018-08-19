@@ -23,8 +23,10 @@ typedef struct {
 	subsystemID senderID;
 	subsystemID receiverID;
 	uint8_t type;
+	uint8_t padding;
 	uint32_t timestamp;
-	uint8_t chksum;
+	uint32_t data;
+	uint32_t chksum;
 } dataPacket;
 
 
