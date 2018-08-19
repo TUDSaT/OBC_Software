@@ -19,4 +19,13 @@ typedef enum {
 } subsystemID;
 
 
+typedef struct {
+	subsystemID senderID;
+	subsystemID receiverID;
+	uint8_t type;
+	uint32_t timestamp;
+	uint8_t chksum;
+} dataPacket;
+
+
 #endif /* CUBESATCONSTANTS_H_ */

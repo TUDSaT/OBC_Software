@@ -14,7 +14,7 @@
  * a format that can be send to the ground station.
  * Exact Format TBD
  */
-byte *xDataHandlerPack(byte *data, int sensorID);
+dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID reciverID, uint8_t type, uint32_t data);
 
 
 #endif /* DATAHANDLER_H_ */
