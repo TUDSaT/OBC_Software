@@ -12,9 +12,8 @@
 /**
  * This class takes in the raw Sensor Data and packs it into
  * a format that can be send to the ground station.
- * Exact Format TBD
  */
-dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID reciverID, uint8_t type, uint32_t data);
+dataPacket xDataHandlerPack(subsystemID senderID, subsystemID reciverID, uint8_t type, uint32_t data);
 
 
 #endif /* DATAHANDLER_H_ */
