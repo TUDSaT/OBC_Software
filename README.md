@@ -1,4 +1,4 @@
-# TUDSaT 0nboard Computer Software
+# TUDSaT Onboard Computer Software
 
 This repository contains the Software for the Onboard Computer of our CubeSat
 
