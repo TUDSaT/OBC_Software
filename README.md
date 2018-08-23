@@ -1,6 +1,6 @@
-# TUDSaT On-Board Computer Software
+# TUDSaT 0nboard Computer Software
 
-This repository contains the Software for the On-Board Computer of our CubeSat
+This repository contains the Software for the Onboard Computer of our CubeSat
 
 ## License
 
