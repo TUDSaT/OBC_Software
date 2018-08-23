@@ -1,10 +1,10 @@
 /*
- * dataHander.c
+ * dataHandler.c
  *
  *  Created on: 19.08.2018
  *      Author: fnbur
  */
-#import "dataHander.c"
+#import "dataHandler.h"
 #import "crc.h"
 
 /**
