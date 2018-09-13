@@ -15,6 +15,7 @@
  */
 dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID receiverID, uint8_t type, uint32_t data){
 	//packing the dataPacket with all known values.
+	//TODO check memory allocation
 	dataPacket *dataPacket = malloc(sizeof(dataPacket));
 	dataPacket->senderID = senderID;
 	dataPacket->receiverID= receiverID;
