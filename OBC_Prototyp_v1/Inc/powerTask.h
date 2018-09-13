@@ -17,7 +17,7 @@ void vPowerTaskInit();
 /**
  * Main Task to control the power subsystem.
  */
-void vPowerTaskMain();
+void vPowerTaskMain(void *taskParams);
 
 
 

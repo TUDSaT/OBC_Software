@@ -5,7 +5,7 @@
   * 				  change during the entire mission.
   ******************************************************************************
  */
-
+#include "cmsis_os.h"
 #ifndef CUBESATCONSTANTS_H_
 #define CUBESATCONSTANTS_H_
 
