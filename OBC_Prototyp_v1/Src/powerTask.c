@@ -19,6 +19,7 @@ void vPowerTaskMain( void *taskParams){
 		uint32_t data = 0;
 
 		dataPacket *batteryStatusRequest = xDataHandlerPack(obcID,powerID,type, data);
+		//TODO generate size
 		vBusInterfaceSend(batteryStatusRequest, NULL, powerID);
 	}
 }
