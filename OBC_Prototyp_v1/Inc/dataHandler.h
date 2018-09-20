@@ -11,10 +11,13 @@
 #define DATAHANDLER_H_
 
 /**
- * This class takes in the raw Sensor Data and packs it into
+ * This method takes in the raw Sensor Data and packs it into
  * a format that can be send to the ground station.
  */
-dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID reciverID, uint8_t type, uint32_t data);
+dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID reciverID, uint8_t type_sID, uint32_t data);
 
-
+/**
+ * This method creates a correct type_sID byte from a packetType and a sensorID.
+ */
+uint8_t xCreateType(packetType packetType, uint8_t sensorID);
 #endif /* DATAHANDLER_H_ */

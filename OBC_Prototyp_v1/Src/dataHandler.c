@@ -10,16 +10,16 @@
 
 
 /**
- * This class takes in the raw Sensor Data and packs it into
- * a format that can be send to the ground station.
+ * This method takes in the raw Sensor Data and packs it into
+ * a format that can be used for internal communication.
  */
-dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID receiverID, uint8_t type, uint32_t data){
+dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID receiverID, uint8_t type_sID, uint32_t data){
 	//packing the dataPacket with all known values.
 	//TODO check memory allocation
 	dataPacket *dataPacket = malloc(sizeof(dataPacket));
 	dataPacket->senderID = senderID;
 	dataPacket->receiverID= receiverID;
-	dataPacket->type= type;
+	dataPacket->type_sID= type_sID;
 	dataPacket->padding=0;
 	//get timestamp from system uptime.
 	dataPacket->timestamp= HAL_GetTick();
@@ -33,7 +33,7 @@ dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID receiverID, uint8
 	buffer[0] = buffer[0] << 8;						//shift left 8 times to make room for the next byte
 	buffer[0] = buffer[0] | dataPacket->receiverID;
 	buffer[0] = buffer[0] << 8;						//shift left 8 times to make room for the next byte
-	buffer[0] = buffer[0] | dataPacket->type;
+	buffer[0] = buffer[0] | dataPacket->type_sID;
 	buffer[0] = buffer[0] << 8;						//shift left 8 times to align correctly, rest are padded wit zeros
 
 	buffer[1] = dataPacket->timestamp;
@@ -43,3 +43,12 @@ dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID receiverID, uint8
 	return dataPacket;
 }
 
+/**
+ * This method creates a correct type_sID byte from a packetType and a sensorID.
+ */
+uint8_t xCreateType(packetType packetType, uint8_t sensorID){
+	sensorID = sensorID && 0x7F; 	//cut MSB from sensorID
+	uint8_t pT = packetType << 7;	//shift bit of packetType 7 times to the left so that it is the MSB
+	pT = sensorID || pT;			//MSB from packetType, all other bits from sensorID
+	return pT;
+}
