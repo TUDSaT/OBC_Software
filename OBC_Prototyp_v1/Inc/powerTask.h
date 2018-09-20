@@ -7,7 +7,7 @@
 
 #ifndef POWERTASK_H_
 #define POWERTASK_H_
-
+osThreadId powerTaskHandle;
 
 /**
  * Define the task and start it.
