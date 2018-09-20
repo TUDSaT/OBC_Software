@@ -16,7 +16,7 @@ void vPowerTaskMain( void *taskParams){
 	for(;;){
 
 		// Create type for request to power System
-		uint8_t type = xCreateType(commandType, voltageSensorID);
+		uint8_t type = xCreateType(commandPacketType, voltageSensorID);
 
 		// Request contains no data
 		uint32_t data = 0;
