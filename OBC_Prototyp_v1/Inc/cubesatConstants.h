@@ -18,11 +18,15 @@ typedef enum {
 	obcID
 } subsystemID;
 
+typedef enum{
+	commandPacketType = 0,
+	dataPacketType = 1
+}packetType;
 
 typedef struct {
 	subsystemID senderID;
 	subsystemID receiverID;
-	uint8_t type;
+	uint8_t type_sID;
 	uint8_t padding;
 	uint32_t timestamp;
 	uint32_t data;
