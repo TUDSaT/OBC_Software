@@ -19,6 +19,13 @@ typedef enum {
 } subsystemID;
 
 
+/**
+ * IDs for the different sensors
+ */
+typedef enum {
+	voltageSensorID
+} sensorIDs;
+
 typedef struct {
 	subsystemID senderID;
 	subsystemID receiverID;

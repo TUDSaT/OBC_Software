@@ -14,13 +14,21 @@ void vPowerTaskInit(){
 
 void vPowerTaskMain( void *taskParams){
 	for(;;){
-		//TODO define type and data - create method to easily build type information
-		uint8_t type = 0;
+
+		// Create type for request to power System
+		uint8_t type = xCreateType(commandType, voltageSensorID);
+
+		// Request contains no data
 		uint32_t data = 0;
 
-		dataPacket *batteryStatusRequest = xDataHandlerPack(obcID,powerID,type, data);
-		//TODO generate size
-		vBusInterfaceSend(batteryStatusRequest, NULL, powerID);
+		// create data Packet
+		dataPacket *batteryStatusRequest = xDataHandlerPack(obcID, powerID, type, data);
+
+		//send battery status request over bus
+		vBusInterfaceSend(batteryStatusRequest, sizeof(batteryStatusRequest), powerID);
+
+		// free memory of data Packet
+		free(batteryStatusRequest);
 	}
 }
 

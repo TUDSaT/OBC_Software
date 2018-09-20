@@ -14,7 +14,7 @@
  * Sends data from Byte Array data to the Subsystem
  * with the given ID over the on-board bus.
  */
-void vBusInterfaceSend(byte *data, int length, subsystemID id);
+void vBusInterfaceSend(dataPacket *dataPacket, int length, subsystemID id);
 
 
 /**
