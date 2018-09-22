@@ -21,22 +21,32 @@ void vPowerTaskMain(void *taskParams) {
 	int wakeUpCountdown = 0;	//Count-down of sleeping cycles for lowPower
 	const int sleepCycles = 42;	//Number of cycles to skip when in low power
 	const int cycleFrequency = pdMS_TO_TICKS(9000);//Set task-frequency in milliseconds per cycle here
+	const int cycleFrequency = pdMS_TO_TICKS(9000);	//Set task-frequency in milliseconds per cycle here
 
 	for (;;) {
 
 		if (wakeUpCountdown <= 0) {
 			//TODO define type and data - create method to easily build type information
 			uint8_t type = 0;
+			// Create type for request to power System
+			uint8_t type = xCreateType(commandPacketType, voltageSensorID);
+
+			// Request contains no data
 			uint32_t data = 0;
 
+			// create data Packet
 			dataPacket *batteryStatusRequest = xDataHandlerPack(obcID, powerID,
 					type, data);
 			//TODO generate size
+
 			vBusInterfaceSend(batteryStatusRequest, NULL, powerID);
 			//TODO receive data from battery-PyBoard
 			//TODO interpret received data
 			//TODO send data to ground-control
 			//TODO set power-mode based on received battery data
+			// free memory of data Packet
+
+			free(batteryStatusRequest);
 			if (lowPower)
 				wakeUpCountdown = sleepCycles;
 		} else {
