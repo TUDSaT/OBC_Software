@@ -7,11 +7,12 @@
 #include "cubesatConstants.h"
 #include "dataHandler.h"
 #include "cmsis_os.h"
+#include "busInterface.h"
 
 void vPowerTaskInit() {
 	//Create main task with corresponding variables here
 	void *taskParams;	//Set task-parameters here
-	osThreadDef(powerTask, vPowerTaskMain(taskParams), 1, 1, 128);
+	osThreadDef(powerTask, vPowerTaskMain, 1, 1, 128);
 	powerTaskHandle = osThreadCreate(osThread(powerTask), NULL);
 }
 
@@ -36,7 +37,7 @@ void vPowerTaskMain(void *taskParams) {
 					type, data);
 			//TODO generate size
 
-			vBusInterfaceSend(batteryStatusRequest, NULL, powerID);
+			vBusInterfaceSend(batteryStatusRequest);
 			//TODO receive data from battery-PyBoard
 			//TODO interpret received data
 			//TODO send data to ground-control

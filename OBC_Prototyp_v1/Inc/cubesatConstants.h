@@ -33,5 +33,13 @@ typedef struct {
 	uint32_t chksum;
 } dataPacket;
 
+typedef enum{
+	false,
+	true
+} bool;
 
+typedef enum{
+	voltageSensorID
+} globalSensorID;
+const uint32_t BUSINTERFACETIMEOUT = 500;
 #endif /* CUBESATCONSTANTS_H_ */
