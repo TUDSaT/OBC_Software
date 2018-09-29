@@ -20,4 +20,9 @@ dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID reciverID, uint8_
  * This method creates a correct type_sID byte from a packetType and a sensorID.
  */
 uint8_t xCreateType(packetType packetType, uint8_t sensorID);
+
+/**
+ * Method to calculate crc checksum of datapacket
+ */
+uint32_t xDataPacketCRCSum(dataPacket *dataPacket);
 #endif /* DATAHANDLER_H_ */

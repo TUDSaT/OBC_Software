@@ -8,7 +8,10 @@
 #include "cmsis_os.h"
 #ifndef CUBESATCONSTANTS_H_
 #define CUBESATCONSTANTS_H_
-
+const uint32_t BUSINTERFACETIMEOUT = 500;
+const uint32_t LOWPOWERTHRESHOLD = 42;
+const uint32_t SLEEPCYCLES = 42;	//Number of cycles to skip when in low power
+const uint32_t TASKPERIOD = 9000;	//Set task period
 /**
  * IDs of the different Subsystem used to identify them on the BUS.
  */
@@ -41,5 +44,5 @@ typedef enum{
 typedef enum{
 	voltageSensorID
 } globalSensorID;
-const uint32_t BUSINTERFACETIMEOUT = 500;
+
 #endif /* CUBESATCONSTANTS_H_ */

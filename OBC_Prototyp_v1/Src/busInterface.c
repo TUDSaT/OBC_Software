@@ -5,8 +5,6 @@
  *      Author: fnbur
  */
 #include "busInterface.h"
-#include "usart.h"
-#include "cubesatConstants.h"
 /**
  * Sends dataPacket the Subsystem defined in the dataPacket Protocol.
  */
@@ -21,11 +19,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 */
 
 /**
- * Return received Data as pointer to a dataPacket.
+ * Writes received Data into the given dataPacket.
+ * Returns HAL_StatusTypeDef.
  */
-dataPacket* xBusInterfaceReceive(){
-	dataPacket *dataPacket = malloc(sizeof(dataPacket));
-	HAL_UART_Receive(&huart1, dataPacket, sizeof(dataPacket),BUSINTERFACETIMEOUT*4);
-	return dataPacket;
+HAL_StatusTypeDef xBusInterfaceReceive(dataPacket* recvDataPacket){
+	return HAL_UART_Receive(&huart1, recvDataPacket, sizeof(dataPacket),BUSINTERFACETIMEOUT*4);
 }
 

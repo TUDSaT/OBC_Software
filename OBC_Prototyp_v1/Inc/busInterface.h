@@ -9,6 +9,7 @@
 #ifndef BUSINTERFACE_H_
 #define BUSINTERFACE_H_
 #include "cubesatConstants.h"
+#include "usart.h"
 
 /**
  * Sends data from Byte Array data to the Subsystem
@@ -20,6 +21,6 @@ void vBusInterfaceSend(dataPacket * dataPacket);
 /**
  * Return received Data from the given subsystem.
  */
-dataPacket* xBusInterfaceReceive();
+HAL_StatusTypeDef xBusInterfaceReceive(dataPacket* recvDataPacket);
 
 #endif /* BUSINTERFACE_H_ */
