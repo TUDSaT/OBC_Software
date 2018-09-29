@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>OBC_Prototyp_v1</name>
-	<comment/>
+	<comment />
 	<projects>
 	</projects>
 	<buildSpec>
@@ -15,7 +15,7 @@
 				</dictionary>
 				<dictionary>
 					<key>?name?</key>
-					<value/>
+					<value />
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.append_environment</key>
@@ -23,7 +23,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildArguments</key>
-					<value/>
+					<value />
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildCommand</key>
@@ -83,64 +83,28 @@
     </link>
 		
 	<link>
-			<name>Application</name>
+			
 			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
+			
 		</link>
     <link>
-			<name>Application/User</name>
+			
 			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
+			
 		</link>
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <link>
-			<name>Application/User/main.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/main.c</location>
-		</link>
-    <link>
-			<name>Application/User/gpio.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/gpio.c</location>
-		</link>
-    <link>
-			<name>Application/User/crc.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/crc.c</location>
-		</link>
-    <link>
-			<name>Application/User/freertos.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/freertos.c</location>
-		</link>
-    <link>
-			<name>Application/User/spi.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/spi.c</location>
-		</link>
-    <link>
-			<name>Application/User/usart.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/usart.c</location>
-		</link>
-    <link>
-			<name>Application/User/stm32f1xx_it.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/stm32f1xx_it.c</location>
-		</link>
-    <link>
-			<name>Application/User/stm32f1xx_hal_msp.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/stm32f1xx_hal_msp.c</location>
-		</link>
-    <link>
-			<name>Application/User/stm32f1xx_hal_timebase_TIM.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Src/stm32f1xx_hal_timebase_TIM.c</location>
-		</link>
-    <link>
-			<name>Drivers</name>
+			
 			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
+			
 		</link>
     <link>
 			<name>Drivers/STM32F1xx_HAL_Driver</name>
@@ -228,19 +192,15 @@
 			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c</location>
 		</link>
     <link>
-			<name>Drivers/CMSIS</name>
+			
 			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
+			
 		</link>
+    
     <link>
-			<name>Drivers/CMSIS/system_stm32f1xx.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC//Src/system_stm32f1xx.c</location>
-		</link>
-    <link>
-			<name>Middlewares</name>
+			
 			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
+			
 		</link>
     <link>
 			<name>Middlewares/FreeRTOS</name>
@@ -292,5 +252,65 @@
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</location>
 		</link>
-  </linkedResources>
+  <link>
+      <name>Application</name>
+      <type>2</type>
+      <locationURI>virtual:/virtual</locationURI>
+    </link><link>
+      <name>Application/User</name>
+      <type>2</type>
+      <locationURI>virtual:/virtual</locationURI>
+    </link><link>
+      <name>Application/User/main.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/main.c</location>
+    </link><link>
+      <name>Application/User/gpio.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/gpio.c</location>
+    </link><link>
+      <name>Application/User/crc.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/crc.c</location>
+    </link><link>
+      <name>Application/User/freertos.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/freertos.c</location>
+    </link><link>
+      <name>Application/User/spi.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/spi.c</location>
+    </link><link>
+      <name>Application/User/usart.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/usart.c</location>
+    </link><link>
+      <name>Application/User/stm32f1xx_it.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/stm32f1xx_it.c</location>
+    </link><link>
+      <name>Application/User/stm32f1xx_hal_msp.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/stm32f1xx_hal_msp.c</location>
+    </link><link>
+      <name>Application/User/stm32f1xx_hal_timebase_TIM.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC/Src/stm32f1xx_hal_timebase_TIM.c</location>
+    </link><link>
+      <name>Drivers</name>
+      <type>2</type>
+      <locationURI>virtual:/virtual</locationURI>
+    </link><link>
+      <name>Drivers/CMSIS</name>
+      <type>2</type>
+      <locationURI>virtual:/virtual</locationURI>
+    </link><link>
+      <name>Drivers/CMSIS/system_stm32f1xx.c</name>
+      <type>1</type>
+      <location>PARENT-2-PROJECT_LOC//Src/system_stm32f1xx.c</location>
+    </link><link>
+      <name>Middlewares</name>
+      <type>2</type>
+      <locationURI>virtual:/virtual</locationURI>
+    </link></linkedResources>
 </projectDescription>
