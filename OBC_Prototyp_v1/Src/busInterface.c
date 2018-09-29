@@ -9,7 +9,7 @@
  * Sends dataPacket the Subsystem defined in the dataPacket Protocol.
  */
 void vBusInterfaceSend(dataPacket *dataPacket){
-	HAL_UART_Transmit(&huart1, dataPacket, sizeof(dataPacket),BUSINTERFACETIMEOUT);
+	HAL_UART_Transmit(&huart1, dataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMOUT);
 }
 
 /*
@@ -23,6 +23,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
  * Returns HAL_StatusTypeDef.
  */
 HAL_StatusTypeDef xBusInterfaceReceive(dataPacket* recvDataPacket){
-	return HAL_UART_Receive(&huart1, recvDataPacket, sizeof(dataPacket),BUSINTERFACETIMEOUT*4);
+	return HAL_UART_Receive(&huart1, recvDataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMOUT*4);
 }
 

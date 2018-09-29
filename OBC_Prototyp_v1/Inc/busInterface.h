@@ -8,6 +8,7 @@
 
 #ifndef BUSINTERFACE_H_
 #define BUSINTERFACE_H_
+
 #include "cubesatConstants.h"
 #include "usart.h"
 

@@ -3,11 +3,13 @@
  *
  *  Created on: 13.09.2018
  */
+
 #include "powerTask.h"
 #include "cubesatConstants.h"
 #include "dataHandler.h"
 #include "cmsis_os.h"
 #include "busInterface.h"
+
 
 void vPowerTaskInit() {
 	//Create main task with corresponding variables here
@@ -41,7 +43,7 @@ void vPowerTaskMain(void *taskParams) {
 			if (recvDataPacket->chksum == xDataPacketCRCSum(recvDataPacket)
 					&& recvDataPacket->senderID == powerID
 					&& recvDataPacket->type_sID == (0x80 | voltageSensorID)) {
-
+				//debug(&huart2, &(recvDataPacket->data), 4, 500);
 				if (recvDataPacket->data < LOWPOWERTHRESHOLD) {
 					isLowPower = true;
 				} else {

@@ -7,7 +7,9 @@
 
 #ifndef POWERTASK_H_
 #define POWERTASK_H_
+
 #include "cmsis_os.h"
+
 osThreadId powerTaskHandle;
 
 /**

@@ -5,10 +5,11 @@
   * 				  data packets.
   ******************************************************************************
  */
-#include "cmsis_os.h"
-#include "cubesatConstants.h"
 #ifndef DATAHANDLER_H_
 #define DATAHANDLER_H_
+
+#include "cmsis_os.h"
+#include "cubesatConstants.h"
 
 /**
  * This method takes in the raw Sensor Data and packs it into
