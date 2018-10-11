@@ -16,32 +16,18 @@
 dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID receiverID, uint8_t type_sID, uint32_t data){
 	//packing the dataPacket with all known values.
 	//TODO check memory allocation
-	dataPacket *dataPacket = pvPortMalloc(sizeof(dataPacket));
-	dataPacket->senderID = senderID;
-	dataPacket->receiverID= receiverID;
-	dataPacket->type_sID= type_sID;
-	dataPacket->padding=0;
+	dataPacket *localDataPacket = pvPortMalloc(sizeof(dataPacket));
+	localDataPacket->senderID = senderID;
+	localDataPacket->receiverID= receiverID;
+	localDataPacket->type_sID= type_sID;
+	localDataPacket->padding=0;
 	//get timestamp from system uptime.
-	dataPacket->timestamp= HAL_GetTick();
-	dataPacket->data = data;
-	/*
-	//32 bit buffer for calucalting the CRC checksum
-	uint32_t buffer[3];
-	//for the first 32bit bufferelement combining 4 8bit elements together:
-	//		senderID, receiverID, type and 8bit of zeros
-	buffer[0] = dataPacket->senderID;
-	buffer[0] = buffer[0] << 8;						//shift left 8 times to make room for the next byte
-	buffer[0] = buffer[0] | dataPacket->receiverID;
-	buffer[0] = buffer[0] << 8;						//shift left 8 times to make room for the next byte
-	buffer[0] = buffer[0] | dataPacket->type_sID;
-	buffer[0] = buffer[0] << 8;						//shift left 8 times to align correctly, rest are padded wit zeros
+	localDataPacket->timestamp= HAL_GetTick();
+	localDataPacket->data = data;
 
-	buffer[1] = dataPacket->timestamp;
-	buffer[2] = dataPacket->data;
-	*/
 	//calculate the CRC checksum
-	dataPacket->chksum=xDataPacketCRCSum(dataPacket);
-	return dataPacket;
+	localDataPacket->chksum=xDataPacketCRCSum(localDataPacket);
+	return localDataPacket;
 }
 uint32_t xDataPacketCRCSum(dataPacket *dataPacket) {
 	//32 bit buffer for calucalting the CRC checksum

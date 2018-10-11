@@ -5,13 +5,16 @@
   * 				  change during the entire mission.
   ******************************************************************************
  */
-#include "cmsis_os.h"
 #ifndef CUBESATCONSTANTS_H_
 #define CUBESATCONSTANTS_H_
-const uint32_t BUSINTERFACETIMEOUT = 500;
-const uint32_t LOWPOWERTHRESHOLD = 42;
-const uint32_t SLEEPCYCLES = 42;	//Number of cycles to skip when in low power
-const uint32_t TASKPERIOD = 9000;	//Set task period
+
+#include "cmsis_os.h"
+
+
+#define TUDSAT_BUSINTERFACE_TIMOUT  500
+#define LOWPOWERTHRESHOLD 42
+#define SLEEPCYCLES 42	//Number of cycles to skip when in low power
+#define TASKPERIOD 9000	//Set task period
 /**
  * IDs of the different Subsystem used to identify them on the BUS.
  */
