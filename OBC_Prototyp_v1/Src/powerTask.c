@@ -1,8 +1,11 @@
-/*
- * powerTask.c
- *
- *  Created on: 13.09.2018
+/**
+  ******************************************************************************
+  * @file           : powerTask.c
+  * @brief          : This Task handles the power subsystem.
+  ******************************************************************************
+  *  Created on: 13.09.2018
  */
+
 
 #include "powerTask.h"
 #include "cubesatConstants.h"
@@ -10,7 +13,9 @@
 #include "cmsis_os.h"
 #include "busInterface.h"
 
-
+/**
+ * @brief initializes the thread, which runs the power-regulation of the OBC
+ */
 void vPowerTaskInit() {
 	//Create main task with corresponding variables here
 	osThreadDef(powerTask, vPowerTaskMain, 1, 1, 128);
