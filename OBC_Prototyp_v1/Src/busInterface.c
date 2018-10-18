@@ -33,4 +33,3 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 HAL_StatusTypeDef xBusInterfaceReceive(dataPacket* recvDataPacket){
 	return HAL_UART_Receive(&huart1, recvDataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT*4);
 }
-
