@@ -4,8 +4,6 @@
   * @brief          : This class implements HAL_UART instructions to realize
   * 				  communication between the OBC and other satellite-entities via the on-board bus
   ******************************************************************************
-  *  Created on: 27.09.2018
-  *      Author: fnbur
  */
 
 
