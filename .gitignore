@@ -6,5 +6,5 @@
 *.su
 /OBC_Prototyp_v1/Debug/
 /OBC_Prototyp_v1/.settings/language.settings.xml 
-/OBC_Prototyp_v1/Doc/html
-/OBC_Prototyp_v1/Doc/latex
+/OBC_Prototyp_v1/Doc/
+OBC_Prototyp_v1/Doc/DoxyfileLocal
