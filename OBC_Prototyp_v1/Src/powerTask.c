@@ -19,7 +19,7 @@
 void vPowerTaskInit() {
 	//Create main task with corresponding variables here
 	osThreadDef(powerTask, vPowerTaskMain, 1, 1, 128);
-	powerTaskHandle = osThreadCreate(osThread(powerTask), NULL);
+	testTaskHandle = osThreadCreate(osThread(powerTask), NULL);
 }
 
 void vPowerTaskMain(void *taskParams) {

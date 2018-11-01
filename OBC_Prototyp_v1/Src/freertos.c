@@ -100,6 +100,9 @@ void MX_FREERTOS_Init(void) {
   
   /* Initialize Power task */
 	vPowerTaskInit();
+
+  /* Initialize Test task */
+	vTestTaskInit();
 	
   /* USER CODE END RTOS_THREADS */
 
