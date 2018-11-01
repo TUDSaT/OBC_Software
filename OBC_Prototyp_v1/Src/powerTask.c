@@ -3,7 +3,6 @@
   * @file           : powerTask.c
   * @brief          : This Task handles the power subsystem.
   ******************************************************************************
-  *  Created on: 13.09.2018
  */
 
 
@@ -22,6 +21,10 @@ void vPowerTaskInit() {
 	testTaskHandle = osThreadCreate(osThread(powerTask), NULL);
 }
 
+/**
+ * @brief Main Task to control the power subsystem.
+ * @param taskParams pointer to task parameter
+*/
 void vPowerTaskMain(void *taskParams) {
 	//taskParams not used so far
 	bool isLowPower = false;	//Switch for lowPower-mode

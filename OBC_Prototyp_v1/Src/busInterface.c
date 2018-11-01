@@ -4,8 +4,6 @@
   * @brief          : This class implements HAL_UART instructions to realize
   * 				  communication between the OBC and other satellite-entities via the on-board bus
   ******************************************************************************
-  *  Created on: 27.09.2018
-  *      Author: fnbur
  */
 
 
@@ -33,4 +31,3 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 HAL_StatusTypeDef xBusInterfaceReceive(dataPacket* recvDataPacket){
 	return HAL_UART_Receive(&huart1, recvDataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT*4);
 }
-

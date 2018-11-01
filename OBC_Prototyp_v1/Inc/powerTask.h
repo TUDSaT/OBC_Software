@@ -1,4 +1,4 @@
-/**
+/*
   ******************************************************************************
   * @file           : powerTask.h
   * @brief          : This Task handles the power subsystem.
@@ -12,12 +12,12 @@
 
 osThreadId powerTaskHandle;
 
-/**
- * Define the task and start it.
+/*
+ * Initializes the thread, which runs the power-regulation of the OBC.
  */
 void vPowerTaskInit();
 
-/**
+/*
  * Main Task to control the power subsystem.
  */
 void vPowerTaskMain(void *taskParams);
