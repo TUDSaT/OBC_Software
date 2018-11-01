@@ -11,7 +11,7 @@
 #include "cmsis_os.h"
 
 
-#define TUDSAT_BUSINTERFACE_TIMOUT  500
+#define TUDSAT_BUSINTERFACE_TIMEOUT  500
 #define LOWPOWERTHRESHOLD 42
 #define SLEEPCYCLES 42	//Number of cycles to skip when in low power
 #define TASKPERIOD 9000	//Set task period
@@ -45,7 +45,8 @@ typedef enum{
 } bool;
 
 typedef enum{
-	voltageSensorID
+	voltageSensorID,
+	testSensorID
 } globalSensorID;
 
 #endif /* CUBESATCONSTANTS_H_ */
