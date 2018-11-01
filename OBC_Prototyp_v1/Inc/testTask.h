@@ -11,6 +11,10 @@
 #include "cmsis_os.h"
 
 osThreadId testTaskHandle;
+/**
+ * Period of Powertask
+ */
+#define TESTTASKPERIOD 5000
 
 /**
  * Define the task and start it.

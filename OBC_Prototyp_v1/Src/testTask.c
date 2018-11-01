@@ -85,6 +85,6 @@ void vTestTaskMain(void *taskParams) {
 
 		vPortFree(TestRequest);
 
-		osDelay(TASKPERIOD/9);
+		osDelay(TESTTASKPERIOD);
 	}
 }
