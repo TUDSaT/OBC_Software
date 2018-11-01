@@ -18,6 +18,7 @@
 /**
  * Battery threshold to go to Low power mode
  */
+
 #define LOWPOWERTHRESHOLD 42
 /**
  *  Number of cycles to skip when in low power
@@ -83,7 +84,8 @@ typedef enum{
  * Enum containing all the Sensor IDs
  */
 typedef enum{
-	voltageSensorID
+	voltageSensorID,
+	testSensorID
 } globalSensorID;
 
 #endif /* CUBESATCONSTANTS_H_ */

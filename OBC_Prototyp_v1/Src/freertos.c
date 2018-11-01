@@ -53,6 +53,7 @@
 
 /* USER CODE BEGIN Includes */     
 #include "powerTask.h"
+#include "testTask.h"
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -99,7 +100,7 @@ void MX_FREERTOS_Init(void) {
   /* add threads, ... */
   
   /* Initialize Power task */
-	vPowerTaskInit();
+	//vPowerTaskInit();
 
   /* Initialize Test task */
 	vTestTaskInit();
