@@ -24,7 +24,7 @@ void vPowerTaskInit() {
 /**
  * @brief Main Task to control the power subsystem.
  * @param taskParams pointer to task parameter
-*/
+ */
 void vPowerTaskMain(void *taskParams) {
 	//taskParams not used so far
 	bool isLowPower = false;	//Switch for lowPower-mode
