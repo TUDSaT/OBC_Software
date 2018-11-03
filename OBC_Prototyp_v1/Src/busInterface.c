@@ -13,8 +13,8 @@
  * @brief Sends data from Byte Array data to the Subsystem with the given ID over the on-board bus.
  * @param *dataPacket is the dataPacket which is supposed to be sent
  */
-void vBusInterfaceSend(dataPacket *dataPacket){
-	HAL_UART_Transmit(&huart1, dataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT);
+void vBusInterfaceSend(dataPacket *data){
+	HAL_UART_Transmit(&huart1, data, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT);
 }
 
 /*
