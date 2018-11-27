@@ -24,7 +24,7 @@ void vTestTaskInit();
 /**
  * Main Task to control all tests.
  */
-void vTestTaskMain(void *taskParams);
+void vTestTaskMain(void const * argument);
 
 
 

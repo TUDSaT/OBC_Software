@@ -14,7 +14,7 @@
  * @param *dataPacket is the dataPacket which is supposed to be sent
  */
 void vBusInterfaceSend(dataPacket *data){
-	HAL_UART_Transmit(&huart1, data, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT);
+	HAL_UART_Transmit(&huart1,(uint8_t*) data, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT);
 }
 
 /*
@@ -29,5 +29,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
  * @return the status of the communication as a HAL_StatusTypeDef
  */
 HAL_StatusTypeDef xBusInterfaceReceive(dataPacket* recvDataPacket){
-	return HAL_UART_Receive(&huart1, recvDataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT*4);
+	HAL_StatusTypeDef ret = HAL_UART_Receive(&huart1,(uint8_t*) recvDataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT*4);
+	return ret;
 }

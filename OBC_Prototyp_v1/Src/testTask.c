@@ -22,7 +22,7 @@ void vTestTaskInit() {
 	testTaskHandle = osThreadCreate(osThread(testTask), NULL);
 }
 
-void vTestTaskMain(void *taskParams) {
+void vTestTaskMain(void const * argument) {
 	//taskParams not used so far
 //	bool isLowPower = false;	//Switch for lowPower-mode
 //	int wakeUpCountdown = 0;	//Count-down of sleeping cycles for lowPower
