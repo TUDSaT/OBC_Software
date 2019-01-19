@@ -27,22 +27,23 @@ void vPowerTaskInit() {
  */
 void vPowerTaskMain(void *taskParams) {
 	//taskParams not used so far
-	bool isLowPower = false;	//Switch for lowPower-mode
-	int wakeUpCountdown = 0;	//Count-down of sleeping cycles for lowPower
-	dataPacket * recvDataPacket = pvPortMalloc(sizeof(dataPacket));
+	//bool isLowPower = false;	//Switch for lowPower-mode
+	//int wakeUpCountdown = 0;	//Count-down of sleeping cycles for lowPower
 
+	// Create type for request to power System
+	uint8_t requestType = xCreateType(commandPacketType, voltageSensorID);
+
+	// Request contains no data
+	uint32_t requestData = 0;
+
+	// create data Packet
+	dataPacket *batteryStatusRequest = xDataHandlerPack(obcID, powerID,
+					requestType, requestData);
 	for (;;) {
-		// Create type for request to power System
-		uint8_t requestType = xCreateType(commandPacketType, voltageSensorID);
-
-		// Request contains no data
-		uint32_t requestData = 0;
-
-		// create data Packet
-		dataPacket *batteryStatusRequest = xDataHandlerPack(obcID, powerID,
-				requestType, requestData);
 
 		vBusInterfaceSend(batteryStatusRequest);
+
+		/*
 		//receive data from battery-PyBoard
 		HAL_StatusTypeDef status = xBusInterfaceReceive(recvDataPacket);
 
@@ -63,6 +64,7 @@ void vPowerTaskMain(void *taskParams) {
 		}
 
 		if (wakeUpCountdown <= 0) {
+
 			if (status == HAL_OK) {
 				if (recvDataPacket->chksum == xDataPacketCRCSum(recvDataPacket)
 						&& recvDataPacket->senderID == powerID
@@ -82,11 +84,12 @@ void vPowerTaskMain(void *taskParams) {
 					}
 				}
 			}
+
+
 		} else {
 			wakeUpCountdown--;
 		}
-
-		vPortFree(batteryStatusRequest);
+		*/
 
 		osDelay(TASKPERIOD);
 	}
