@@ -21,7 +21,8 @@ QueueHandle_t xReceivedDataQueue;
 /*
  * Buffer stores datapacket for interrupt
  */
-dataPacket pvRecvDataPacket;
+dataPacket *pvRecvDataPacket;
+
 
 /*
  * Sends data from Byte Array data to the Subsystem
