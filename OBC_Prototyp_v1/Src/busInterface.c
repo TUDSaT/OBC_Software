@@ -17,17 +17,29 @@ void vBusInterfaceSend(dataPacket *dataPacket){
 	HAL_UART_Transmit(&huart1, dataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT);
 }
 
-/*
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-	receiveComplete = true;
+	xQueueSendFromISR(xReceivedDataQueue, pvRecvDataPacket, NULL);
+	HAL_UART_Receive_IT(&huart1, pvRecvDataPacket, sizeof(dataPacket));
 }
-*/
+
+void vInitBusInterface() {
+	xReceivedDataQueue = xQueueCreate(10, sizeof(dataPacket));
+	pvRecvDataPacket = pvPortMalloc(sizeof(dataPacket));
+	HAL_UART_Receive_IT(&huart1, pvRecvDataPacket, sizeof(dataPacket));
+
+}
+
 
 /**
  * @brief writes received Data into the given dataPacket.
  * @param *recvDataPacket is a pointer to where the received dataPacket is supposed to be stored
  * @return the status of the communication as a HAL_StatusTypeDef
  */
+/*
 HAL_StatusTypeDef xBusInterfaceReceive(dataPacket* recvDataPacket){
+	HAL_UART_Receive_IT(&uart1, recvDataPacket, sizeof(dataPacket));
 	return HAL_UART_Receive(&huart1, recvDataPacket, sizeof(dataPacket),TUDSAT_BUSINTERFACE_TIMEOUT*4);
+
 }
+*/
