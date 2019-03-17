@@ -9,6 +9,7 @@
 #define CUBESATCONSTANTS_H_
 
 #include "cmsis_os.h"
+#include <stdbool.h>
 
 
 /**
@@ -71,14 +72,6 @@ typedef struct {
 	/** CRC32 Checksum */
 	uint32_t chksum;
 } dataPacket;
-
-/**
- * Boolean Type
- */
-typedef enum{
-	false,
-	true
-} bool;
 
 /**
  * Enum containing all the Sensor IDs
