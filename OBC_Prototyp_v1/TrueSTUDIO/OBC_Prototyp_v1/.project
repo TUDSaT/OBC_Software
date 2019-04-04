@@ -121,16 +121,8 @@
 			<type>1</type>
 			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c</location>
 		</link>
-    <link>
-			<name>Drivers/STM32F1xx_HAL_Driver/stm32f1xx_hal_spi.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c</location>
-		</link>
-    <link>
-			<name>Drivers/STM32F1xx_HAL_Driver/stm32f1xx_hal_spi_ex.c</name>
-			<type>1</type>
-			<location>PARENT-2-PROJECT_LOC/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c</location>
-		</link>
+    
+    
     <link>
 			<name>Drivers/STM32F1xx_HAL_Driver/stm32f1xx_hal_tim.c</name>
 			<type>1</type>
@@ -253,9 +245,29 @@
 			<location>PARENT-2-PROJECT_LOC/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</location>
 		</link>
   <link>
-      <name>Application</name>
+      
       <type>2</type>
-      <locationURI>virtual:/virtual</locationURI>
+      
+    </link><link>
+      
+      <type>2</type>
+      
+    </link><link>
+      
+      <type>2</type>
+      
+    </link><link>
+      
+      <type>2</type>
+      
+    </link><link>
+      
+      <type>2</type>
+      
+    </link><link>
+      
+      <type>2</type>
+      
     </link><link>
       <name>Application/User</name>
       <type>2</type>
@@ -277,10 +289,6 @@
       <type>1</type>
       <location>PARENT-2-PROJECT_LOC/Src/freertos.c</location>
     </link><link>
-      <name>Application/User/spi.c</name>
-      <type>1</type>
-      <location>PARENT-2-PROJECT_LOC/Src/spi.c</location>
-    </link><link>
       <name>Application/User/usart.c</name>
       <type>1</type>
       <location>PARENT-2-PROJECT_LOC/Src/usart.c</location>
@@ -297,9 +305,9 @@
       <type>1</type>
       <location>PARENT-2-PROJECT_LOC/Src/stm32f1xx_hal_timebase_TIM.c</location>
     </link><link>
-      <name>Drivers</name>
+      
       <type>2</type>
-      <locationURI>virtual:/virtual</locationURI>
+      
     </link><link>
       <name>Drivers/CMSIS</name>
       <type>2</type>
@@ -308,6 +316,18 @@
       <name>Drivers/CMSIS/system_stm32f1xx.c</name>
       <type>1</type>
       <location>PARENT-2-PROJECT_LOC//Src/system_stm32f1xx.c</location>
+    </link><link>
+      
+      <type>2</type>
+      
+    </link><link>
+      <name>Application</name>
+      <type>2</type>
+      <locationURI>virtual:/virtual</locationURI>
+    </link><link>
+      <name>Drivers</name>
+      <type>2</type>
+      <locationURI>virtual:/virtual</locationURI>
     </link><link>
       <name>Middlewares</name>
       <type>2</type>
