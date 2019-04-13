@@ -43,54 +43,6 @@ void vPowerTaskMain(void *taskParams) {
 
 		vBusInterfaceSend(batteryStatusRequest);
 
-		/*
-		//receive data from battery-PyBoard
-		HAL_StatusTypeDef status = xBusInterfaceReceive(recvDataPacket);
-
-		//interpret received data
-		if (status == HAL_OK) {
-			if (recvDataPacket->chksum == xDataPacketCRCSum(recvDataPacket)
-					&& recvDataPacket->senderID == powerID
-					&& recvDataPacket->type_sID == (0x80 | voltageSensorID)) {
-				//debug(&huart2, &(recvDataPacket->data), 4, 500);
-				if (recvDataPacket->data < LOWPOWERTHRESHOLD) {
-					isLowPower = true;
-				} else {
-					isLowPower = false;
-					wakeUpCountdown = 0;
-				}
-
-			}
-		}
-
-		if (wakeUpCountdown <= 0) {
-
-			if (status == HAL_OK) {
-				if (recvDataPacket->chksum == xDataPacketCRCSum(recvDataPacket)
-						&& recvDataPacket->senderID == powerID
-						&& recvDataPacket->type_sID
-								== (0x80 | voltageSensorID)) {
-
-					//send data to communication
-					dataPacket * sendDataPacket = xDataHandlerPack(obcID,
-							communicationID,
-							xCreateType(commandPacketType, voltageSensorID),
-							recvDataPacket->data);
-					vBusInterfaceSend(sendDataPacket);
-					// free memory of data Packet
-					vPortFree(sendDataPacket);
-					if (isLowPower) {
-						wakeUpCountdown = SLEEPCYCLES;
-					}
-				}
-			}
-
-
-		} else {
-			wakeUpCountdown--;
-		}
-		*/
-
 		osDelay(TASKPERIOD);
 	}
 }

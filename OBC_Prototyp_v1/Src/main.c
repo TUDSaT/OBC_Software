@@ -1,3 +1,4 @@
+
 /**
   ******************************************************************************
   * @file           : main.c
@@ -9,7 +10,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * Copyright (c) 2018 STMicroelectronics International N.V. 
+  * Copyright (c) 2019 STMicroelectronics International N.V. 
   * All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
@@ -52,7 +53,8 @@
 #include "crc.h"
 #include "usart.h"
 #include "gpio.h"
-
+#include "cubesatConstants.h"
+#include "busInterface.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -110,7 +112,6 @@ int main(void)
   MX_CRC_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
