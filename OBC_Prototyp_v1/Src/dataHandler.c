@@ -79,5 +79,6 @@ uint8_t xCreateType(packetType packetType, uint8_t sensorID) {
 	sensorID = sensorID & 0x7F; 	//cut MSB from sensorID
 	uint8_t pT = packetType << 7;//shift bit of packetType 7 times to the left so that it is the MSB
 	pT = sensorID | pT;		//MSB from packetType, all other bits from sensorID
+
 	return pT;
 }

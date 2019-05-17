@@ -54,6 +54,7 @@
 /* USER CODE BEGIN Includes */     
 #include "powerTask.h"
 #include "busInterface.h"
+#include "dataProcessingTask.h"
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -102,6 +103,7 @@ void MX_FREERTOS_Init(void) {
 	vPowerTaskInit();
 	vInitBusInterface();
 	vDataProcessingTaskInit();
+
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
