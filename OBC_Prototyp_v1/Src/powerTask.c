@@ -25,7 +25,7 @@ void vPowerTaskInit() {
  * @brief Main Task to control the power subsystem.
  * @param taskParams pointer to task parameter
  */
-void vPowerTaskMain(void *taskParams) {
+void vPowerTaskMain(void const * argument) {
 	//taskParams not used so far
 	//bool isLowPower = false;	//Switch for lowPower-mode
 	//int wakeUpCountdown = 0;	//Count-down of sleeping cycles for lowPower

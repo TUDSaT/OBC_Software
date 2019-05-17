@@ -9,6 +9,7 @@
 #define CUBESATCONSTANTS_H_
 
 #include "cmsis_os.h"
+#include <stdbool.h>
 
 
 /**
@@ -18,6 +19,7 @@
 /**
  * Battery threshold to go to Low power mode
  */
+
 #define LOWPOWERTHRESHOLD 42
 /**
  *  Number of cycles to skip when in low power
@@ -72,18 +74,11 @@ typedef struct {
 } dataPacket;
 
 /**
- * Boolean Type
- */
-typedef enum{
-	false,
-	true
-} bool;
-
-/**
  * Enum containing all the Sensor IDs
  */
 typedef enum{
-	voltageSensorID
+	voltageSensorID,
+	testSensorID
 } globalSensorID;
 
 #endif /* CUBESATCONSTANTS_H_ */
