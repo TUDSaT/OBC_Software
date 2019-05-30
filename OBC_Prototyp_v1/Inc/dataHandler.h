@@ -12,14 +12,16 @@
 #include "cubesatConstants.h"
 
 /**
- * This method takes in the raw Sensor Data and packs it into
- * 			a format that can be used for internal communication or
- * 			transmission to a ground station.
+ * This method takes the given values of senderID, receiverID, type and data and
+ * stores them in given dataPacket localDataPacket. The necessary crc checksum is
+ * also calculated.
  */
-dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID reciverID, uint8_t type_sID, uint32_t data);
-
+xDataHandlerPack(dataPacket *localDataPacket, subsystemID senderID, subsystemID receiverID,
+		uint8_t type_sID, uint32_t data) 
 /**
  * This method calculates the 32 bit CRC checksum of a dataHandler given as pointer.
+ * Note: It uses the hardware CRC-Calculator of the chip. 
+ * Note: The CRC checksum is MPEG-2. 
  */
 uint32_t xDataPacketCRCSum(dataPacket *dataPacket);
 

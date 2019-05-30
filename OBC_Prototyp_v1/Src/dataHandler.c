@@ -12,17 +12,15 @@
  * @brief This method takes in the raw Sensor Data and packs it into
  * 			a format that can be used for internal communication or
  * 			transmission to a ground station.
+ * @param localDataPacket the dataPacket that will be used to hold the given data
  * @param senderID subsystemID of the sender
  * @param receiverID subsystemID of the receiver
  * @param type_sID defines if command or data and contains the globalSensorID
  * @param data data to be send
- * @return returns a dataPacket pointer to the created dataPacket
  */
-dataPacket *xDataHandlerPack(subsystemID senderID, subsystemID receiverID,
+xDataHandlerPack(dataPacket *localDataPacket, subsystemID senderID, subsystemID receiverID,
 		uint8_t type_sID, uint32_t data) {
 	//packing the dataPacket with all known values.
-	//TODO check memory allocation
-	dataPacket *localDataPacket = pvPortMalloc(sizeof(dataPacket));
 	localDataPacket->senderID = senderID;
 	localDataPacket->receiverID = receiverID;
 	localDataPacket->type_sID = type_sID;
