@@ -61,9 +61,9 @@ uint32_t xDataPacketCRCSum(dataPacket *dataPacket) {
 }
 
 /**
- * @brief This method checks whether the checksum corresponds to the dataPacket
+ * @brief This method checks the integrity of given dataPacket
  * @param dataPacket pointer to the dataPacket
- * @return true if the checksum is set accordingly or false if something went wrong during communication
+ * @return true if the checksum matches the data in the dataPacket
  */
 bool xVerifyCheckSum(dataPacket *dataPacket) {
 	return dataPacket->chksum == xDataPacketCRCSum(dataPacket);
