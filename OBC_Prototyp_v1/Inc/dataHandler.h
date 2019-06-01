@@ -17,7 +17,7 @@
  * also calculated.
  */
 xDataHandlerPack(dataPacket *localDataPacket, subsystemID senderID, subsystemID receiverID,
-		uint8_t type_sID, uint32_t data) 
+		uint8_t type_sID, uint32_t data);
 /**
  * This method calculates the 32 bit CRC checksum of a dataHandler given as pointer.
  * Note: It uses the hardware CRC-Calculator of the chip. 
@@ -28,7 +28,7 @@ uint32_t xDataPacketCRCSum(dataPacket *dataPacket);
 /**
  * This method verifies given dataPacket.
  */
-bool xVerifyCheckSum(dataPacket *dataPacket)
+bool xVerifyCheckSum(dataPacket *dataPacket);
 
 /**
  * This method creates a correct type_sID byte from a packetType and a globalSensorID.
