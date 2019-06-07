@@ -28,7 +28,7 @@ uint32_t xDataPacketCRCSum(dataPacket *dataPacket);
 /**
  * This method verifies given dataPacket.
  */
-bool xVerifyCheckSum(dataPacket *dataPacket);
+bool bVerifyCheckSum(dataPacket *dataPacket);
 
 /**
  * This method creates a correct type_sID byte from a packetType and a globalSensorID.

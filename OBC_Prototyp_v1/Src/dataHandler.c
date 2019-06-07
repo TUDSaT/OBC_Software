@@ -63,7 +63,7 @@ uint32_t xDataPacketCRCSum(dataPacket *dataPacket) {
  * @param dataPacket pointer to the dataPacket
  * @return true if the checksum matches the data in the dataPacket
  */
-bool xVerifyCheckSum(dataPacket *dataPacket) {
+bool bVerifyCheckSum(dataPacket *dataPacket) {
 	return dataPacket->chksum == xDataPacketCRCSum(dataPacket);
 }
 
